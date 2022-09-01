@@ -32,14 +32,13 @@ export default function NewsListPage() {
       }
     };
     fetchArticles();
-  }, [term,pageNo]);
+  }, [term,pageNo,articles]);
 
   useEffect(() => {
     if(articles.length !== 0){
       setPageNo(prev => prev+1);
     }
-    console.log(inView)
-  }, [inView]);
+  }, [inView,articles.length]);
 
   const clipHandle = (e) => {
     const newClipItem = {
